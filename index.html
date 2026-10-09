@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake N Bite | Desi Taste • Natural Power</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --primary-green: #1B4332;
+            --accent-green: #2D6A4F;
+            --cream-bg: #FAF6EE;
+            --accent-gold: #D4A373;
+            --text-dark: #222222;
+            --white: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--cream-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--primary-green);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: #74C69D;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #74C69D;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 5%;
+            min-height: 80vh;
+            background: linear-gradient(135deg, #FAF6EE 60%, #E8F5E9 100%);
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-tag {
+            background-color: var(--accent-green);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #444;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-green);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            max-width: 45%;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 80%;
+            max-width: 400px;
+            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.15));
+        }
+
+        /* Highlights / USPs Section */
+        .usps {
+            background: var(--white);
+            padding: 2.5rem 5%;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .usp-item h3 {
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* About / 10-Year Legacy Section */
+        .legacy {
+            padding: 5rem 5%;
+            text-align: center;
+            background-color: #F4EBE1;
+        }
+
+        .legacy h2 {
+            color: var(--primary-green);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .legacy p {
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        /* Products Grid */
+        .products {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-green);
+            margin-bottom: 3rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid #EAEAEA;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 180px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content, .hero-image {
+                max-width: 100%;
+            }
+            .hero-image {
+                margin-top: 2rem;
+            }
+            .usps {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo-text">Shake<span>N</span>Bite</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">Our 10-Yr Story</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-tag">Sattu Ka Naya Awtaar</span>
+            <h1>Desi Taste • Natural Power</h1>
+            <p>Experience authentic nutrition with <b>Shake N Bite Lemon Masala Sattu</b>. Quick to make, refreshing to drink, and rich in natural plant protein.</p>
+            <a href="#products" class="cta-btn">Explore Products</a>
+        </div>
+        <div class="hero-image">
+            <!-- Replace image link with your packaging file path -->
+            <img src="packaging-reference.png" alt="Shake N Bite Lemon Masala Sattu Package">
+        </div>
+    </section>
+
+    <!-- USPs / Highlights -->
+    <section class="usps">
+        <div class="usp-item">
+            <h3>🌱 Plant Based</h3>
+            <p>100% pure & natural ingredients</p>
+        </div>
+        <div class="usp-item">
+            <h3>💪 High In Protein</h3>
+            <p>Sustained natural body power</p>
+        </div>
+        <div class="usp-item">
+            <h3>🌾 Gluten Free</h3>
+            <p>Easy on digestive health</p>
+        </div>
+        <div class="usp-item">
+            <h3>🚫 No Preservatives</h3>
+            <p>Zero added chemicals</p>
+        </div>
+    </section>
+
+    <!-- Our Story / 10 Years Legacy -->
+    <section class="legacy" id="about">
+        <h2>A Decade of Trust & Health</h2>
+        <p>10 years ago, Shake N Bite embarked on a mission to revive traditional superfoods with our flagship product—<b>Sattu</b>. Over the past decade, we've blended age-old Indian wisdom with modern convenience. Today, we proudly offer a wholesome basket of superfoods including premium <b>Sattu</b>, crunchy <b>Makhana</b>, and pure <b>Gud (Jaggery)</b>.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2 class="section-title">Our Pure & Desi Range</h2>
+        <div class="product-grid">
+
+            <!-- Sattu -->
+            <div class="product-card">
+                <img src="sattu-pack.png" alt="Shake N Bite Sattu">
+                <h3>Lemon Masala Sattu</h3>
+                <p>Kato Gholo Peelo Yaar! Traditional roasted gram protein drink packed with tangy lemon and Indian spices.</p>
+                <a href="#" class="cta-btn">Order Now</a>
+            </div>
+
+            <!-- Makhana -->
+            <div class="product-card">
+                <img src="makhana-pack.png" alt="Shake N Bite Makhana">
+                <h3>Crunchy Makhana</h3>
+                <p>Light, roasted fox nuts tailored for healthy snacking without compromising on taste.</p>
+                <a href="#" class="cta-btn">Order Now</a>
+            </div>
+
+            <!-- Gud -->
+            <div class="product-card">
+                <img src="gud-pack.png" alt="Shake N Bite Gud">
+                <h3>Natural Organic Gud</h3>
+                <p>Pure, unrefined jaggery offering rich sweetness filled with natural iron and minerals.</p>
+                <a href="#" class="cta-btn">Order Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Shake N Bite. All Rights Reserved. | Sattu • Gud • Makhana</p>
+    </footer>
+
+</body>
+</html>
